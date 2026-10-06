@@ -6,6 +6,7 @@ import { useToast } from '../../context/ToastContext';
 import { Input } from '../../components/ui/Input';
 import { Button } from '../../components/ui/Button';
 import { AppLogo } from '../../components/ui/AppLogo';
+import loginBg from '../../assets/login-bg.png';
 
 export const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -57,23 +58,29 @@ export const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 flex flex-col justify-center items-center p-4">
-      <div className="max-w-md w-full">
+    <div
+      className="min-h-screen w-full flex flex-col justify-center items-center p-4 relative bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${loginBg})` }}
+    >
+      {/* Subtle overlay for optimal contrast and clean readability */}
+      <div className="absolute inset-0 bg-slate-900/10 pointer-events-none" />
+
+      <div className="max-w-md w-full relative z-10 py-6">
         {/* Brand Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <div className="flex justify-center mb-3">
-            <AppLogo className="w-20 h-20" />
+            <AppLogo className="w-20 h-20 drop-shadow-md" />
           </div>
-          <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
+          <h1 className="text-2xl font-bold text-slate-900 tracking-tight drop-shadow-xs">
             Sistem Informasi Perpustakaan
           </h1>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-slate-600 mt-1 font-medium">
             Kelola perpustakaan dengan lebih mudah.
           </p>
         </div>
 
         {/* Card Form */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
+        <div className="bg-white rounded-2xl border border-slate-200/90 shadow-xl p-6 sm:p-8">
           <form onSubmit={handleSubmit} className="space-y-4">
             {formError && (
               <div className="p-3 bg-rose-50 border border-rose-200 text-rose-700 text-xs rounded-lg font-medium">
