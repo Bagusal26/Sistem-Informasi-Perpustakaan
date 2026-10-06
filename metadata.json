@@ -1,0 +1,6 @@
+{
+  "name": "Sistem Informasi Perpustakaan",
+  "description": "Sistem Informasi Perpustakaan Berbasis Web untuk pengelolaan katalog buku, anggota, peminjaman, pengembalian, dan laporan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
